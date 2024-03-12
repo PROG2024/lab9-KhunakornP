@@ -9,7 +9,7 @@ Write unit tests as described in README.md.
 """
 from circle import Circle
 import unittest
-from math import hypot
+from math import hypot, pi
 
 
 class CircleTest(unittest.TestCase):
@@ -20,7 +20,7 @@ class CircleTest(unittest.TestCase):
     def test_add_positive_area_to_circle(self):
         """Add two circles together"""
         new_circle = self.circle.add_area(Circle(10))
-        self.assertEqual(Circle(hypot(10, 5)).get_area(), new_circle.get_area())
+        self.assertEqual((hypot(10.5)**2) * pi, new_circle.get_area())
         new_circle = self.circle.add_area(Circle(42))
         self.assertEqual(hypot(42, 5), new_circle.get_radius())
 
