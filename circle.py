@@ -3,7 +3,17 @@ import math
 
 
 class Circle:
+    """
+    A class representing a circle
 
+    >>> new_circle = Circle(3)
+    >>> new_circle.add_area(Circle(4)).get_radius()
+    5.0
+    >>> raise ValueError(new_circle = Circle(-1))
+    Traceback (most recent call last):
+        ...
+    ValueError: radius must be non-negative
+    """
     def __init__(self, radius):
         """Initialize a circle with given radius.
         
