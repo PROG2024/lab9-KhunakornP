@@ -9,20 +9,20 @@ Write unit tests as described in README.md.
 """
 from circle import Circle
 import unittest
-from math import hypot, pi
+from math import pi
 
 
 class CircleTest(unittest.TestCase):
     """Tests for the circle class"""
     def setUp(self):
-        self.circle = Circle(5)
+        self.circle = Circle(3)
 
     def test_add_positive_area_to_circle(self):
         """Add two circles together"""
-        new_circle = self.circle.add_area(Circle(10))
-        self.assertEqual((hypot(10.5)**2) * pi, new_circle.get_area())
-        new_circle = self.circle.add_area(Circle(42))
-        self.assertEqual(hypot(42, 5), new_circle.get_radius())
+        new_circle = self.circle.add_area(Circle(4))
+        self.assertEqual((5**2) * pi, new_circle.get_area())
+        new_circle = self.circle.add_area(Circle(4))
+        self.assertEqual(5, new_circle.get_radius())
 
     def test_add_zero_to_circle(self):
         """Add a circle with radius zero to the circle"""
